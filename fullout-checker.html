@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Checker Gratuit | Full Out Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #f69e06;
+            --primary-dark: #d98a05;
+            --primary-light: #fef3cd;
+            --dark: #1a1a1a;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --green: #22c55e;
+            --red: #ef4444;
+            --blue: #3b82f6;
+            --purple: #a855f7;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #fff;
+            min-height: 100vh;
+            color: var(--dark);
+        }
+        
+        /* ==================== HEADER / NAVIGATION ==================== */
+        .nav-wrapper {
+            background: #fff;
+            border-bottom: 1px solid var(--gray-200);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+        
+        .logo-area img {
+            height: 45px;
+        }
+        
+        .main-menu {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .main-menu ul {
+            display: flex;
+            list-style: none;
+            gap: 5px;
+        }
+        
+        .main-menu ul li {
+            position: relative;
+        }
+        
+        .main-menu ul li a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border-radius: 6px;
+        }
+        
+        .main-menu ul li a:hover {
+            color: var(--primary);
+            background: var(--gray-50);
+        }
+        
+        .main-menu ul li a i {
+            font-size: 10px;
+            transition: transform 0.3s;
+        }
+        
+        /* Dropdown */
+        .main-menu ul li.has-dropdown:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .main-menu ul li.has-dropdown:hover > a i {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            min-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+        }
+        
+        .dropdown li a {
+            padding: 12px 20px;
+            border-radius: 0;
+        }
+        
+        .dropdown li a:hover {
+            background: var(--gray-50);
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(246, 158, 6, 0.25);
+        }
+        
+        .btn-primary i {
+            font-size: 12px;
+        }
+        
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: var(--dark);
+            transition: all 0.3s;
+        }
+        
+        /* ==================== HERO SECTION ==================== */
+        .hero-section {
+            background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(246, 158, 6, 0.08) 0%, transparent 60%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-light);
+            border: 1px solid rgba(246, 158, 6, 0.2);
+            color: var(--primary-dark);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .hero-badge i {
+            font-size: 16px;
+        }
+        
+        .hero-content h1 {
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        
+        /* ==================== CHECKER FORM ==================== */
+        .checker-box {
+            background: #fff;
+            border: 1px solid var(--gray-200);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 60px rgba(0,0,0,0.08);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .input-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .url-input {
+            flex: 1;
+            padding: 18px 24px;
+            font-size: 16px;
+            border: 2px solid var(--gray-200);
+            border-radius: 12px;
+            background: var(--gray-50);
+            color: var(--dark);
+            outline: none;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+        
+        .url-input:focus {
+            border-color: var(--primary);
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(246, 158, 6, 0.1);
+        }
+        
+        .url-input::placeholder {
+            color: var(--gray-400);
+        }
+        
+        .analyze-btn {
+            padding: 18px 35px;
+            font-size: 16px;
+            font-weight: 700;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: inherit;
+        }
+        
+        .analyze-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(246, 158, 6, 0.3);
+        }
+        
+        .analyze-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .check-features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .check-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray-500);
+            font-size: 13px;
+        }
+        
+        .check-feature i {
+            color: var(--green);
+        }
+        
+        /* ==================== LOADING STATE ==================== */
+        .loading-state {
+            display: none;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .loading-state.active {
+            display: block;
+        }
+        
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--gray-200);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            color: var(--gray-500);
+            font-size: 14px;
+        }
+        
+        .loading-steps {
+            margin-top: 20px;
+            text-align: left;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .loading-step {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            color: var(--gray-400);
+            font-size: 13px;
+        }
+        
+        .loading-step.active {
+            color: var(--primary);
+        }
+        
+        .loading-step.done {
+            color: var(--green);
+        }
+        
+        .step-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+        
+        .loading-step.done .step-icon {
+            background: var(--green);
+            color: #fff;
+        }
+        
+        .loading-step.active .step-icon {
+            background: var(--primary);
+            color: #fff;
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        /* ==================== RESULTS SECTION ==================== */
+        .results-container {
+            display: none;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .results-container.active {
+            display: block;
+        }
+        
+        .results-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        
+        .analyzed-url {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .url-favicon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .url-favicon i {
+            color: var(--gray-400);
+        }
+        
+        .url-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .overall-score {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .score-circle {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+        }
+        
+        .score-circle.good {
+            background: rgba(34, 197, 94, 0.15);
+            border: 3px solid var(--green);
+            color: var(--green);
+        }
+        
+        .score-circle.medium {
+            background: rgba(246, 158, 6, 0.15);
+            border: 3px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .score-circle.bad {
+            background: rgba(239, 68, 68, 0.15);
+            border: 3px solid var(--red);
+            color: var(--red);
+        }
+        
+        .score-label {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+        
+        /* Score Cards Grid */
+        .scores-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .scores-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .score-card {
+            background: #fff;
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .score-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+        }
+        
+        .score-card-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 12px;
+            font-size: 20px;
+        }
+        
+        .score-card-icon.seo { background: rgba(59, 130, 246, 0.15); color: var(--blue); }
+        .score-card-icon.ads { background: rgba(168, 85, 247, 0.15); color: var(--purple); }
+        .score-card-icon.tech { background: rgba(34, 197, 94, 0.15); color: var(--green); }
+        .score-card-icon.meta { background: rgba(246, 158, 6, 0.15); color: var(--primary); }
+        
+        .score-card-value {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        
+        .score-card-value.good { color: var(--green); }
+        .score-card-value.medium { color: var(--primary); }
+        .score-card-value.bad { color: var(--red); }
+        
+        .score-card-label {
+            font-size: 12px;
+            color: var(--gray-500);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Analysis Sections */
+        .analysis-section {
+            background: #fff;
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .analysis-section:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 25px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .section-header:hover {
+            background: var(--gray-50);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--dark);
+        }
+        
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        .section-icon.seo { background: rgba(59, 130, 246, 0.15); color: var(--blue); }
+        .section-icon.ads { background: rgba(168, 85, 247, 0.15); color: var(--purple); }
+        .section-icon.tech { background: rgba(34, 197, 94, 0.15); color: var(--green); }
+        .section-icon.meta { background: rgba(246, 158, 6, 0.15); color: var(--primary); }
+        
+        .section-badge {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .section-badge.issues {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--red);
+        }
+        
+        .section-badge.ok {
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--green);
+        }
+        
+        .section-content {
+            padding: 0 25px 25px;
+            display: none;
+        }
+        
+        .section-content.active {
+            display: block;
+        }
+        
+        .issue-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .issue-item:last-child {
+            border-bottom: none;
+        }
+        
+        .issue-status {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 12px;
+        }
+        
+        .issue-status.error {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--red);
+        }
+        
+        .issue-status.warning {
+            background: rgba(246, 158, 6, 0.15);
+            color: var(--primary);
+        }
+        
+        .issue-status.success {
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--green);
+        }
+        
+        .issue-content h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--dark);
+        }
+        
+        .issue-content p {
+            font-size: 13px;
+            color: var(--gray-500);
+            line-height: 1.5;
+        }
+        
+        .issue-impact {
+            margin-top: 8px;
+            padding: 10px 14px;
+            background: var(--gray-50);
+            border-radius: 8px;
+            font-size: 12px;
+            color: var(--gray-600);
+        }
+        
+        .issue-impact strong {
+            color: var(--primary);
+        }
+        
+        /* ==================== CTA SECTION ==================== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #fbbf24 100%);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+        
+        .cta-section h2 {
+            color: #000;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            position: relative;
+        }
+        
+        .cta-section p {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 16px;
+            max-width: 500px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #000;
+            color: #fff;
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* ==================== STATS ROW ==================== */
+        .stats-section {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+        
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-top: 5px;
+        }
+        
+        /* ==================== SERVICES SECTION ==================== */
+        .services-section {
+            padding: 80px 0;
+        }
+        
+        .section-titles {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-titles h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-titles p {
+            font-size: 16px;
+            color: var(--gray-500);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .service-card {
+            background: #fff;
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+        
+        .service-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 24px;
+            background: var(--primary-light);
+            color: var(--primary);
+        }
+        
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: #0a0a0a;
+            color: #fff;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-col p {
+            color: var(--gray-400);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+        
+        .footer-col h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: var(--gray-400);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-social a:hover {
+            background: var(--primary);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .footer-bottom p {
+            color: var(--gray-500);
+            font-size: 13px;
+        }
+        
+        .footer-bottom-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .footer-bottom-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.3s;
+        }
+        
+        .footer-bottom-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* ==================== MOBILE RESPONSIVE ==================== */
+        @media (max-width: 992px) {
+            .main-menu ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .nav-inner {
+                height: 70px;
+            }
+            
+            .hero-section {
+                padding: 60px 0 40px;
+            }
+            
+            .input-group {
+                flex-direction: column;
+            }
+            
+            .analyze-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .checker-box {
+                padding: 25px;
+            }
+            
+            .check-features {
+                gap: 15px;
+            }
+            
+            .stats-row {
+                gap: 40px;
+            }
+            
+            .cta-section {
+                padding: 40px 25px;
+            }
+            
+            .cta-section h2 {
+                font-size: 24px;
+            }
+            
+            .footer-inner {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="nav-wrapper">
+        <div class="container">
+            <div class="nav-inner">
+                <div class="logo-area">
+                    <a href="https://www.fulloutmedia.ro/">
+                        <img src="https://www.fulloutmedia.ro/wp-content/uploads/2025/03/fullout-media.svg" alt="Full Out Media">
+                    </a>
+                </div>
+                
+                <div class="main-menu">
+                    <ul>
+                        <li><a href="https://www.fulloutmedia.ro/despre-noi/">Despre Noi</a></li>
+                        <li><a href="https://www.fulloutmedia.ro/servicii/">Servicii</a></li>
+                        <li class="has-dropdown">
+                            <a href="#">Resurse <i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="https://www.fulloutmedia.ro/studii-de-caz/">Studii de caz</a></li>
+                                <li><a href="https://www.fulloutmedia.ro/category/blog/">Blog</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.fulloutmedia.ro/cariere/">Cariere</a></li>
+                        <li><a href="https://www.fulloutmedia.ro/portofoliu/">Portofoliu</a></li>
+                        <li><a href="https://www.fulloutmedia.ro/certificari/">Certificari</a></li>
+                        <li><a href="https://www.fulloutmedia.ro/contact/">Contact</a></li>
+                    </ul>
+                    
+                    <a href="https://www.fulloutmedia.ro/contact" class="btn-primary">
+                        <span>Oferta</span>
+                        <i class="fa-regular fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-bolt"></i>
+                    Analiză gratuită în 30 secunde
+                </div>
+                <h1>Descoperă unde pierzi <span>bani și clienți</span></h1>
+                <p class="hero-subtitle">
+                    Analizăm site-ul tău instant: SEO, tracking, Google Ads setup și prezența pe Meta Ads. Primești un raport cu oportunități concrete de creștere.
+                </p>
+                
+                <!-- Checker Form -->
+                <div class="checker-box">
+                    <form id="checker-form">
+                        <div class="input-group">
+                            <input type="text" class="url-input" id="website-url" placeholder="Introdu URL-ul site-ului (ex: deppo.ro)" required>
+                            <button type="submit" class="analyze-btn" id="analyze-btn">
+                                <span>Analizează</span>
+                                <i class="fa-regular fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="check-features">
+                            <span class="check-feature">
+                                <i class="fa-solid fa-circle-check"></i>
+                                SEO On-Page
+                            </span>
+                            <span class="check-feature">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Tracking Setup
+                            </span>
+                            <span class="check-feature">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Ads Pixels
+                            </span>
+                            <span class="check-feature">
+                                <i class="fa-solid fa-circle-check"></i>
+                                Platform Detection
+                            </span>
+                        </div>
+                    </form>
+                    
+                    <!-- Loading State -->
+                    <div class="loading-state" id="loading-state">
+                        <div class="loader"></div>
+                        <p class="loading-text">Analizăm site-ul tău...</p>
+                        <div class="loading-steps">
+                            <div class="loading-step" id="step-1">
+                                <span class="step-icon">1</span>
+                                <span>Verificare conexiune...</span>
+                            </div>
+                            <div class="loading-step" id="step-2">
+                                <span class="step-icon">2</span>
+                                <span>Analiză SEO...</span>
+                            </div>
+                            <div class="loading-step" id="step-3">
+                                <span class="step-icon">3</span>
+                                <span>Detectare tracking...</span>
+                            </div>
+                            <div class="loading-step" id="step-4">
+                                <span class="step-icon">4</span>
+                                <span>Verificare ads pixels...</span>
+                            </div>
+                            <div class="loading-step" id="step-5">
+                                <span class="step-icon">5</span>
+                                <span>Generare raport...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Results Container -->
+    <div class="results-container" id="results-container">
+        <div class="container">
+            <!-- Results Header -->
+            <div class="results-header">
+                <div class="analyzed-url">
+                    <div class="url-favicon">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <span class="url-text" id="analyzed-url-text">example.ro</span>
+                </div>
+                <div class="overall-score">
+                    <div>
+                        <span class="score-label">Scor General</span>
+                    </div>
+                    <div class="score-circle medium" id="overall-score">72</div>
+                </div>
+            </div>
+            
+            <!-- Score Cards -->
+            <div class="scores-grid">
+                <div class="score-card">
+                    <div class="score-card-icon seo">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <div class="score-card-value good" id="seo-score">85</div>
+                    <div class="score-card-label">SEO Score</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-card-icon tech">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <div class="score-card-value medium" id="tech-score">70</div>
+                    <div class="score-card-label">Technical</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-card-icon ads">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div class="score-card-value bad" id="ads-score">45</div>
+                    <div class="score-card-label">Ads Setup</div>
+                </div>
+                <div class="score-card">
+                    <div class="score-card-icon meta">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <div class="score-card-value medium" id="meta-score">65</div>
+                    <div class="score-card-label">Meta Tags</div>
+                </div>
+            </div>
+            
+            <!-- Analysis Sections -->
+            <div class="analysis-section" id="seo-section">
+                <div class="section-header" onclick="toggleSection('seo')">
+                    <div class="section-title">
+                        <div class="section-icon seo">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <span>Analiză SEO</span>
+                    </div>
+                    <span class="section-badge issues" id="seo-badge">3 probleme</span>
+                </div>
+                <div class="section-content" id="seo-content">
+                    <!-- SEO issues will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="analysis-section" id="tracking-section">
+                <div class="section-header" onclick="toggleSection('tracking')">
+                    <div class="section-title">
+                        <div class="section-icon tech">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <span>Tracking & Analytics</span>
+                    </div>
+                    <span class="section-badge issues" id="tracking-badge">2 probleme</span>
+                </div>
+                <div class="section-content" id="tracking-content">
+                    <!-- Tracking issues will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="analysis-section" id="ads-section">
+                <div class="section-header" onclick="toggleSection('ads')">
+                    <div class="section-title">
+                        <div class="section-icon ads">
+                            <i class="fa-solid fa-ad"></i>
+                        </div>
+                        <span>Advertising Pixels</span>
+                    </div>
+                    <span class="section-badge issues" id="ads-badge">4 probleme</span>
+                </div>
+                <div class="section-content" id="ads-content">
+                    <!-- Ads issues will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <div class="analysis-section" id="platform-section">
+                <div class="section-header" onclick="toggleSection('platform')">
+                    <div class="section-title">
+                        <div class="section-icon meta">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+                        <span>Platformă & Tehnologii</span>
+                    </div>
+                    <span class="section-badge ok" id="platform-badge">Detectat</span>
+                </div>
+                <div class="section-content" id="platform-content">
+                    <!-- Platform info will be populated by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Vrei să rezolvi aceste probleme?</h2>
+                <p>Programează o discuție gratuită cu echipa noastră și primești o strategie personalizată pentru creșterea afacerii tale online.</p>
+                <a href="https://www.fulloutmedia.ro/contact" class="cta-btn">
+                    <span>Programează o discuție</span>
+                    <i class="fa-regular fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-value">150+</div>
+                    <div class="stat-label">Clienți mulțumiți</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">6+</div>
+                    <div class="stat-label">Ani experiență</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">10M+</div>
+                    <div class="stat-label">RON vânzări generate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">95%</div>
+                    <div class="stat-label">Rată retenție clienți</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-titles">
+                <h2>Servicii de Digital Marketing</h2>
+                <p>Suntem Full Out Media – o echipă specializată în PPC, SEO, Social Media, Web Development și Email Marketing.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                    <h3>SEO</h3>
+                    <p>Creștem vizibilitatea organică și te ajutăm să atragi trafic calificat prin strategii de link building.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <h3>Pay-Per-Click (PPC)</h3>
+                    <p>Construim și optimizăm campanii Google Ads și Meta Ads pentru rezultate maxime.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                    <h3>Social Media</h3>
+                    <p>Strategii creative pentru rețelele sociale care întăresc prezența brandului tău online.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Platforme digitale rapide, responsive și optimizate pentru conversii.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <img src="https://www.fulloutmedia.ro/wp-content/uploads/2025/03/fullout-media.svg" alt="Full Out Media" class="footer-logo">
+                    <p>Denumire: FULL OUT MEDIA SRL CUI: RO38597942, înregistrată la Registrul Comerțului sub nr. J40/2017/2017</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/FullOutMedia"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/fulloutmedia_agency"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@fulloutmedia_agency"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/company/full-out-media/"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Linkuri utile</h4>
+                    <ul>
+                        <li><a href="https://www.fulloutmedia.ro/despre-noi/">Despre Noi</a></li>
+                        <li><a href="https://www.fulloutmedia.ro/cariere/">Cariere</a></li>
+                        <li><a href="https://www.fulloutmedia.ro/servicii/">Servicii</a></li>
+                        <li><a href="https://www.fulloutmedia.ro/contact/">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:bogdan@fulloutmedia.ro">bogdan@fulloutmedia.ro</a></li>
+                        <li><a href="tel:+40729126660">+40 729 126 660</a></li>
+                        <li><span style="color: var(--gray-400); font-size: 14px;">Str. Mihai Eminescu 108-112, București</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2026 Full Out Media, All Rights Reserved</p>
+                <div class="footer-bottom-links">
+                    <a href="https://www.fulloutmedia.ro/termeni-si-conditii/">Termeni și Condiții</a>
+                    <a href="https://www.fulloutmedia.ro/politica-de-confidentialitate/">Politica de confidențialitate</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Toggle section content
+        function toggleSection(sectionId) {
+            const content = document.getElementById(sectionId + '-content');
+            content.classList.toggle('active');
+        }
+        
+        // Normalize URL - add https:// if missing
+        function normalizeUrl(url) {
+            url = url.trim();
+            // Remove any leading/trailing whitespace
+            if (!url) return '';
+            
+            // If URL doesn't start with http:// or https://, add https://
+            if (!url.match(/^https?:\/\//i)) {
+                // Remove www. if present at the start for cleaner handling
+                url = 'https://' + url;
+            }
+            return url;
+        }
+        
+        // Form submission
+        document.getElementById('checker-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            let url = document.getElementById('website-url').value;
+            url = normalizeUrl(url);
+            const form = document.getElementById('checker-form');
+            const loadingState = document.getElementById('loading-state');
+            const resultsContainer = document.getElementById('results-container');
+            const analyzeBtn = document.getElementById('analyze-btn');
+            
+            // Hide form, show loading
+            form.querySelector('.input-group').style.display = 'none';
+            form.querySelector('.check-features').style.display = 'none';
+            loadingState.classList.add('active');
+            
+            // Simulate loading steps
+            const steps = ['step-1', 'step-2', 'step-3', 'step-4', 'step-5'];
+            
+            for (let i = 0; i < steps.length; i++) {
+                await new Promise(resolve => setTimeout(resolve, 600));
+                if (i > 0) {
+                    document.getElementById(steps[i-1]).classList.remove('active');
+                    document.getElementById(steps[i-1]).classList.add('done');
+                }
+                document.getElementById(steps[i]).classList.add('active');
+            }
+            
+            await new Promise(resolve => setTimeout(resolve, 500));
+            document.getElementById(steps[steps.length-1]).classList.remove('active');
+            document.getElementById(steps[steps.length-1]).classList.add('done');
+            
+            // Generate mock results (in production, this would call your API)
+            const results = generateMockResults(url);
+            
+            // Display results
+            displayResults(results, url);
+            
+            // Hide loading, show results
+            loadingState.classList.remove('active');
+            resultsContainer.classList.add('active');
+            
+            // Scroll to results
+            resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        
+        function generateMockResults(url) {
+            // This would be replaced with actual API call
+            return {
+                seo: {
+                    score: Math.floor(Math.random() * 40) + 50,
+                    issues: [
+                        { type: 'warning', title: 'Meta description prea scurtă', desc: 'Meta description-ul are doar 45 caractere. Recomandăm între 150-160 caractere.', impact: 'Poate afecta CTR în rezultatele Google cu până la 15%' },
+                        { type: 'error', title: 'Lipsă tag H1', desc: 'Pagina nu conține un tag H1. Acesta este esențial pentru SEO on-page.', impact: 'Impact major asupra pozițiilor în Google' },
+                        { type: 'success', title: 'Title tag optimizat', desc: 'Title tag-ul are lungimea optimă și conține keywords relevante.', impact: null }
+                    ]
+                },
+                tracking: {
+                    score: Math.floor(Math.random() * 30) + 40,
+                    issues: [
+                        { type: 'error', title: 'Google Analytics 4 nu este detectat', desc: 'Site-ul nu are GA4 instalat corect. Pierzi date valoroase despre vizitatori.', impact: 'Fără tracking, nu poți măsura ROI-ul campaniilor' },
+                        { type: 'warning', title: 'GTM încărcare lentă', desc: 'Google Tag Manager se încarcă cu întârziere, afectând acuratețea datelor.', impact: 'Poți pierde până la 20% din evenimente' }
+                    ]
+                },
+                ads: {
+                    score: Math.floor(Math.random() * 30) + 30,
+                    issues: [
+                        { type: 'error', title: 'Facebook Pixel lipsă', desc: 'Facebook Pixel nu este instalat. Nu poți face remarketing pe Meta.', impact: 'Pierzi posibilitatea de a face remarketing către 70% din audiență' },
+                        { type: 'error', title: 'Google Ads Tag nedetectat', desc: 'Nu ai conversion tracking pentru Google Ads.', impact: 'Campaniile rulează fără optimizare pentru conversii' },
+                        { type: 'warning', title: 'TikTok Pixel absent', desc: 'Nu ai TikTok Pixel instalat pentru tracking.', impact: 'Ratezi audiența în creștere de pe TikTok' }
+                    ]
+                },
+                platform: {
+                    name: 'MerchantPro',
+                    detected: true,
+                    technologies: ['PHP', 'jQuery', 'Bootstrap']
+                }
+            };
+        }
+        
+        function displayResults(results, url) {
+            // Update URL display
+            const domain = url.replace(/^https?:\/\//, '').replace(/^www\./, '').split('/')[0];
+            document.getElementById('analyzed-url-text').textContent = domain;
+            
+            // Calculate overall score
+            const overallScore = Math.round((results.seo.score + results.tracking.score + results.ads.score) / 3);
+            const scoreCircle = document.getElementById('overall-score');
+            scoreCircle.textContent = overallScore;
+            scoreCircle.className = 'score-circle ' + getScoreClass(overallScore);
+            
+            // Update score cards
+            updateScoreCard('seo-score', results.seo.score);
+            updateScoreCard('tech-score', results.tracking.score);
+            updateScoreCard('ads-score', results.ads.score);
+            updateScoreCard('meta-score', Math.floor((results.seo.score + results.tracking.score) / 2));
+            
+            // Update badges
+            updateBadge('seo-badge', results.seo.issues.filter(i => i.type !== 'success').length);
+            updateBadge('tracking-badge', results.tracking.issues.filter(i => i.type !== 'success').length);
+            updateBadge('ads-badge', results.ads.issues.filter(i => i.type !== 'success').length);
+            
+            // Populate issues
+            populateIssues('seo-content', results.seo.issues);
+            populateIssues('tracking-content', results.tracking.issues);
+            populateIssues('ads-content', results.ads.issues);
+            
+            // Platform info
+            const platformContent = document.getElementById('platform-content');
+            platformContent.innerHTML = `
+                <div class="issue-item">
+                    <div class="issue-status success"><i class="fa-solid fa-check"></i></div>
+                    <div class="issue-content">
+                        <h4>Platformă detectată: ${results.platform.name}</h4>
+                        <p>Tehnologii folosite: ${results.platform.technologies.join(', ')}</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function getScoreClass(score) {
+            if (score >= 70) return 'good';
+            if (score >= 50) return 'medium';
+            return 'bad';
+        }
+        
+        function updateScoreCard(elementId, score) {
+            const element = document.getElementById(elementId);
+            element.textContent = score;
+            element.className = 'score-card-value ' + getScoreClass(score);
+        }
+        
+        function updateBadge(elementId, issueCount) {
+            const element = document.getElementById(elementId);
+            if (issueCount === 0) {
+                element.textContent = 'OK';
+                element.className = 'section-badge ok';
+            } else {
+                element.textContent = issueCount + ' problem' + (issueCount === 1 ? 'ă' : 'e');
+                element.className = 'section-badge issues';
+            }
+        }
+        
+        function populateIssues(containerId, issues) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = issues.map(issue => `
+                <div class="issue-item">
+                    <div class="issue-status ${issue.type}">
+                        <i class="fa-solid ${issue.type === 'success' ? 'fa-check' : issue.type === 'error' ? 'fa-xmark' : 'fa-exclamation'}"></i>
+                    </div>
+                    <div class="issue-content">
+                        <h4>${issue.title}</h4>
+                        <p>${issue.desc}</p>
+                        ${issue.impact ? `<div class="issue-impact"><strong>💡 Impact:</strong> ${issue.impact}</div>` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+    
+</body>
+</html>
