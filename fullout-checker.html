@@ -887,6 +887,249 @@
             color: var(--primary);
         }
         
+        /* ==================== HOW WE HELP SECTION ==================== */
+        .how-we-help-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #fff 0%, var(--gray-50) 100%);
+        }
+        
+        .section-tag {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary-dark);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .help-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.06);
+            border: 1px solid var(--gray-100);
+        }
+        
+        .help-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .help-icon.problem {
+            background: #fef2f2;
+            color: var(--red);
+        }
+        
+        .help-content h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        
+        .help-content .problem-text {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .arrow-down {
+            text-align: center;
+            color: var(--primary);
+            font-size: 18px;
+            margin: 15px 0;
+        }
+        
+        .solution-title {
+            color: var(--green) !important;
+        }
+        
+        .help-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 15px;
+        }
+        
+        .help-content ul li {
+            font-size: 13px;
+            color: var(--gray-600);
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .help-content ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: bold;
+        }
+        
+        .result-tag {
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            color: #166534;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        /* Social Proof */
+        .social-proof {
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .social-proof h3 {
+            font-size: 22px;
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+        
+        .proof-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .proof-card {
+            background: #fff;
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 25px 35px;
+            text-align: center;
+            min-width: 180px;
+        }
+        
+        .proof-metric {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+        
+        .proof-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+            margin: 8px 0 5px;
+        }
+        
+        .proof-detail {
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            margin-top: 60px;
+            background: linear-gradient(135deg, var(--dark) 0%, #2d2d2d 100%);
+            border-radius: 24px;
+            padding: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        
+        .cta-content {
+            flex: 1;
+        }
+        
+        .cta-content h3 {
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 12px;
+        }
+        
+        .cta-content p {
+            font-size: 16px;
+            color: var(--gray-400);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .cta-benefits {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-benefits span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--green);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .cta-phone {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--primary);
+            color: #fff;
+            padding: 18px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .cta-phone:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .cta-schedule {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: transparent;
+            border: 2px solid var(--gray-600);
+            color: #fff;
+            padding: 16px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+        
+        .cta-schedule:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
         /* ==================== FOOTER ==================== */
         .footer {
             background: #0a0a0a;
@@ -1049,6 +1292,42 @@
             
             .footer-inner {
                 flex-direction: column;
+            }
+            
+            .help-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .proof-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .proof-card {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .final-cta {
+                flex-direction: column;
+                padding: 30px 20px;
+                text-align: center;
+            }
+            
+            .cta-content h3 {
+                font-size: 22px;
+            }
+            
+            .cta-benefits {
+                justify-content: center;
+            }
+            
+            .cta-buttons {
+                width: 100%;
+            }
+            
+            .cta-phone, .cta-schedule {
+                width: 100%;
             }
         }
     </style>
@@ -1295,6 +1574,118 @@
             </div>
         </div>
     </div>
+    
+    <!-- How We Help Section -->
+    <section class="how-we-help-section">
+        <div class="container">
+            <div class="section-titles">
+                <span class="section-tag">De ce să lucrezi cu noi?</span>
+                <h2>Transformăm problemele în oportunități de creștere</h2>
+                <p>Nu doar identificăm problemele – le rezolvăm și îți creștem afacerea măsurabil.</p>
+            </div>
+            
+            <div class="help-grid">
+                <div class="help-card">
+                    <div class="help-icon problem">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="help-content">
+                        <h4>Problemă: SEO slab</h4>
+                        <p class="problem-text">Site-ul tău nu apare pe Google, pierzi clienți în fiecare zi</p>
+                        <div class="arrow-down"><i class="fa-solid fa-arrow-down"></i></div>
+                        <h4 class="solution-title">Soluția noastră:</h4>
+                        <ul>
+                            <li>Audit SEO complet și strategie pe 90 de zile</li>
+                            <li>Optimizare tehnică și on-page</li>
+                            <li>Link building cu rezultate garantate</li>
+                        </ul>
+                        <div class="result-tag">📈 Creștere medie: +150% trafic organic în 6 luni</div>
+                    </div>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon problem">
+                        <i class="fa-solid fa-chart-line-down"></i>
+                    </div>
+                    <div class="help-content">
+                        <h4>Problemă: Campanii neprofitabile</h4>
+                        <p class="problem-text">Cheltui buget pe Google/Meta Ads dar nu vezi rezultate</p>
+                        <div class="arrow-down"><i class="fa-solid fa-arrow-down"></i></div>
+                        <h4 class="solution-title">Soluția noastră:</h4>
+                        <ul>
+                            <li>Restructurare completă a conturilor</li>
+                            <li>Tracking corect și atribuire precisă</li>
+                            <li>Optimizare ROAS și reducere CPA</li>
+                        </ul>
+                        <div class="result-tag">📈 ROAS mediu clienți: 5-8x</div>
+                    </div>
+                </div>
+                
+                <div class="help-card">
+                    <div class="help-icon problem">
+                        <i class="fa-solid fa-gauge-low"></i>
+                    </div>
+                    <div class="help-content">
+                        <h4>Problemă: Site lent / conversii slabe</h4>
+                        <p class="problem-text">Vizitatori vin dar nu cumpără, bounce rate ridicat</p>
+                        <div class="arrow-down"><i class="fa-solid fa-arrow-down"></i></div>
+                        <h4 class="solution-title">Soluția noastră:</h4>
+                        <ul>
+                            <li>Optimizare viteza și Core Web Vitals</li>
+                            <li>CRO - optimizare rata de conversie</li>
+                            <li>A/B testing și UX improvements</li>
+                        </ul>
+                        <div class="result-tag">📈 Creștere conversii: +40-80%</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Social Proof -->
+            <div class="social-proof">
+                <h3>Rezultate reale de la clienți MerchantPro:</h3>
+                <div class="proof-cards">
+                    <div class="proof-card">
+                        <div class="proof-metric">+93,7%</div>
+                        <div class="proof-label">Venituri</div>
+                        <div class="proof-detail">De la 620K la 1.2M RON</div>
+                    </div>
+                    <div class="proof-card">
+                        <div class="proof-metric">+1.366%</div>
+                        <div class="proof-label">Creștere</div>
+                        <div class="proof-detail">Best performer 2025</div>
+                    </div>
+                    <div class="proof-card">
+                        <div class="proof-metric">4.35%</div>
+                        <div class="proof-label">Rată conversie</div>
+                        <div class="proof-detail">vs. 1.5% media pieței</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Final CTA -->
+            <div class="final-cta">
+                <div class="cta-content">
+                    <h3>Hai să vorbim despre afacerea ta</h3>
+                    <p>Programează un call gratuit de 20 minute. Analizăm împreună conturile tale și îți spunem exact ce putem îmbunătăți.</p>
+                    <div class="cta-benefits">
+                        <span><i class="fa-solid fa-check"></i> Audit gratuit</span>
+                        <span><i class="fa-solid fa-check"></i> Fără obligații</span>
+                        <span><i class="fa-solid fa-check"></i> Rezultate concrete</span>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="tel:+40729126660" class="cta-phone">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>Sună acum: 0729 126 660</span>
+                    </a>
+                    <a href="https://www.fulloutmedia.ro/contact" class="cta-schedule">
+                        <span>Programează întâlnire</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- Stats Section -->
     <section class="stats-section">
