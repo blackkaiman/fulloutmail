@@ -887,10 +887,16 @@
             color: var(--primary);
         }
         
-        /* ==================== HOW WE HELP SECTION ==================== */
-        .how-we-help-section {
-            padding: 80px 0;
-            background: linear-gradient(180deg, #fff 0%, var(--gray-50) 100%);
+        /* ==================== HOW WE HELP SECTION (inside results) ==================== */
+        .how-we-help-inner {
+            margin-top: 60px;
+            padding-top: 50px;
+            border-top: 1px solid var(--gray-100);
+        }
+        
+        .how-we-help-inner .section-titles {
+            text-align: center;
+            margin-bottom: 40px;
         }
         
         .section-tag {
@@ -1572,120 +1578,118 @@
                     <i class="fa-regular fa-arrow-right"></i>
                 </a>
             </div>
+            
+            <!-- How We Help Section - inside results -->
+            <div class="how-we-help-inner">
+                <div class="section-titles">
+                    <span class="section-tag">De ce să lucrezi cu noi?</span>
+                    <h2>Transformăm problemele în oportunități de creștere</h2>
+                    <p>Nu doar identificăm problemele – le rezolvăm și îți creștem afacerea măsurabil.</p>
+                </div>
+                
+                <div class="help-grid">
+                    <div class="help-card">
+                        <div class="help-icon problem">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="help-content">
+                            <h4>Problemă: SEO slab</h4>
+                            <p class="problem-text">Site-ul tău nu apare pe Google, pierzi clienți în fiecare zi</p>
+                            <div class="arrow-down"><i class="fa-solid fa-arrow-down"></i></div>
+                            <h4 class="solution-title">Soluția noastră:</h4>
+                            <ul>
+                                <li>Audit SEO complet și strategie pe 90 de zile</li>
+                                <li>Optimizare tehnică și on-page</li>
+                                <li>Link building cu rezultate garantate</li>
+                            </ul>
+                            <div class="result-tag">📈 Creștere medie: +150% trafic organic în 6 luni</div>
+                        </div>
+                    </div>
+                    
+                    <div class="help-card">
+                        <div class="help-icon problem">
+                            <i class="fa-solid fa-chart-line-down"></i>
+                        </div>
+                        <div class="help-content">
+                            <h4>Problemă: Campanii neprofitabile</h4>
+                            <p class="problem-text">Cheltui buget pe Google/Meta Ads dar nu vezi rezultate</p>
+                            <div class="arrow-down"><i class="fa-solid fa-arrow-down"></i></div>
+                            <h4 class="solution-title">Soluția noastră:</h4>
+                            <ul>
+                                <li>Restructurare completă a conturilor</li>
+                                <li>Tracking corect și atribuire precisă</li>
+                                <li>Optimizare ROAS și reducere CPA</li>
+                            </ul>
+                            <div class="result-tag">📈 ROAS mediu clienți: 5-8x</div>
+                        </div>
+                    </div>
+                    
+                    <div class="help-card">
+                        <div class="help-icon problem">
+                            <i class="fa-solid fa-gauge-low"></i>
+                        </div>
+                        <div class="help-content">
+                            <h4>Problemă: Site lent / conversii slabe</h4>
+                            <p class="problem-text">Vizitatori vin dar nu cumpără, bounce rate ridicat</p>
+                            <div class="arrow-down"><i class="fa-solid fa-arrow-down"></i></div>
+                            <h4 class="solution-title">Soluția noastră:</h4>
+                            <ul>
+                                <li>Optimizare viteza și Core Web Vitals</li>
+                                <li>CRO - optimizare rata de conversie</li>
+                                <li>A/B testing și UX improvements</li>
+                            </ul>
+                            <div class="result-tag">📈 Creștere conversii: +40-80%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Social Proof -->
+                <div class="social-proof">
+                    <h3>Rezultate reale de la clienți MerchantPro:</h3>
+                    <div class="proof-cards">
+                        <div class="proof-card">
+                            <div class="proof-metric">+93,7%</div>
+                            <div class="proof-label">Venituri</div>
+                            <div class="proof-detail">De la 620K la 1.2M RON</div>
+                        </div>
+                        <div class="proof-card">
+                            <div class="proof-metric">+1.366%</div>
+                            <div class="proof-label">Creștere</div>
+                            <div class="proof-detail">Best performer 2025</div>
+                        </div>
+                        <div class="proof-card">
+                            <div class="proof-metric">4.35%</div>
+                            <div class="proof-label">Rată conversie</div>
+                            <div class="proof-detail">vs. 1.5% media pieței</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Final CTA -->
+                <div class="final-cta">
+                    <div class="cta-content">
+                        <h3>Hai să vorbim despre afacerea ta</h3>
+                        <p>Programează un call gratuit de 20 minute. Analizăm împreună conturile tale și îți spunem exact ce putem îmbunătăți.</p>
+                        <div class="cta-benefits">
+                            <span><i class="fa-solid fa-check"></i> Audit gratuit</span>
+                            <span><i class="fa-solid fa-check"></i> Fără obligații</span>
+                            <span><i class="fa-solid fa-check"></i> Rezultate concrete</span>
+                        </div>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="tel:+40729126660" class="cta-phone">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>Sună acum: 0729 126 660</span>
+                        </a>
+                        <a href="https://www.fulloutmedia.ro/contact" class="cta-schedule">
+                            <span>Programează întâlnire</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
-    <!-- How We Help Section -->
-    <section class="how-we-help-section">
-        <div class="container">
-            <div class="section-titles">
-                <span class="section-tag">De ce să lucrezi cu noi?</span>
-                <h2>Transformăm problemele în oportunități de creștere</h2>
-                <p>Nu doar identificăm problemele – le rezolvăm și îți creștem afacerea măsurabil.</p>
-            </div>
-            
-            <div class="help-grid">
-                <div class="help-card">
-                    <div class="help-icon problem">
-                        <i class="fa-solid fa-triangle-exclamation"></i>
-                    </div>
-                    <div class="help-content">
-                        <h4>Problemă: SEO slab</h4>
-                        <p class="problem-text">Site-ul tău nu apare pe Google, pierzi clienți în fiecare zi</p>
-                        <div class="arrow-down"><i class="fa-solid fa-arrow-down"></i></div>
-                        <h4 class="solution-title">Soluția noastră:</h4>
-                        <ul>
-                            <li>Audit SEO complet și strategie pe 90 de zile</li>
-                            <li>Optimizare tehnică și on-page</li>
-                            <li>Link building cu rezultate garantate</li>
-                        </ul>
-                        <div class="result-tag">📈 Creștere medie: +150% trafic organic în 6 luni</div>
-                    </div>
-                </div>
-                
-                <div class="help-card">
-                    <div class="help-icon problem">
-                        <i class="fa-solid fa-chart-line-down"></i>
-                    </div>
-                    <div class="help-content">
-                        <h4>Problemă: Campanii neprofitabile</h4>
-                        <p class="problem-text">Cheltui buget pe Google/Meta Ads dar nu vezi rezultate</p>
-                        <div class="arrow-down"><i class="fa-solid fa-arrow-down"></i></div>
-                        <h4 class="solution-title">Soluția noastră:</h4>
-                        <ul>
-                            <li>Restructurare completă a conturilor</li>
-                            <li>Tracking corect și atribuire precisă</li>
-                            <li>Optimizare ROAS și reducere CPA</li>
-                        </ul>
-                        <div class="result-tag">📈 ROAS mediu clienți: 5-8x</div>
-                    </div>
-                </div>
-                
-                <div class="help-card">
-                    <div class="help-icon problem">
-                        <i class="fa-solid fa-gauge-low"></i>
-                    </div>
-                    <div class="help-content">
-                        <h4>Problemă: Site lent / conversii slabe</h4>
-                        <p class="problem-text">Vizitatori vin dar nu cumpără, bounce rate ridicat</p>
-                        <div class="arrow-down"><i class="fa-solid fa-arrow-down"></i></div>
-                        <h4 class="solution-title">Soluția noastră:</h4>
-                        <ul>
-                            <li>Optimizare viteza și Core Web Vitals</li>
-                            <li>CRO - optimizare rata de conversie</li>
-                            <li>A/B testing și UX improvements</li>
-                        </ul>
-                        <div class="result-tag">📈 Creștere conversii: +40-80%</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Social Proof -->
-            <div class="social-proof">
-                <h3>Rezultate reale de la clienți MerchantPro:</h3>
-                <div class="proof-cards">
-                    <div class="proof-card">
-                        <div class="proof-metric">+93,7%</div>
-                        <div class="proof-label">Venituri</div>
-                        <div class="proof-detail">De la 620K la 1.2M RON</div>
-                    </div>
-                    <div class="proof-card">
-                        <div class="proof-metric">+1.366%</div>
-                        <div class="proof-label">Creștere</div>
-                        <div class="proof-detail">Best performer 2025</div>
-                    </div>
-                    <div class="proof-card">
-                        <div class="proof-metric">4.35%</div>
-                        <div class="proof-label">Rată conversie</div>
-                        <div class="proof-detail">vs. 1.5% media pieței</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Final CTA -->
-            <div class="final-cta">
-                <div class="cta-content">
-                    <h3>Hai să vorbim despre afacerea ta</h3>
-                    <p>Programează un call gratuit de 20 minute. Analizăm împreună conturile tale și îți spunem exact ce putem îmbunătăți.</p>
-                    <div class="cta-benefits">
-                        <span><i class="fa-solid fa-check"></i> Audit gratuit</span>
-                        <span><i class="fa-solid fa-check"></i> Fără obligații</span>
-                        <span><i class="fa-solid fa-check"></i> Rezultate concrete</span>
-                    </div>
-                </div>
-                <div class="cta-buttons">
-                    <a href="tel:+40729126660" class="cta-phone">
-                        <i class="fa-solid fa-phone"></i>
-                        <span>Sună acum: 0729 126 660</span>
-                    </a>
-                    <a href="https://www.fulloutmedia.ro/contact" class="cta-schedule">
-                        <span>Programează întâlnire</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
     
     <!-- Stats Section -->
     <section class="stats-section">
